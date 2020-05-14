@@ -1,3 +1,4 @@
+' Кодировка данного файла должна быть Windows-1251
 Option Explicit
 
 Const PDF = 17
@@ -183,7 +184,7 @@ If WScript.Arguments.Count = 1 Then
 	If objFSO.FolderExists(strSourceFolder) Then
 		Set objWord = Nothing
 		fCount = 0
-		Set csvFile = objFSO.CreateTextFile(strSourceFolder & "\csv.csv", True)
+		Set csvFile = objFSO.CreateTextFile(strSourceFolder & "\multiTV-import.csv", True)
 		For Each objFile In objFSO.GetFolder(strSourceFolder).Files
 			If StrComp(objFSO.GetExtensionName(objFile.Name), "docx", vbTextCompare) = 0 Then
 				' Запускаем Word если он ещё не запущен
